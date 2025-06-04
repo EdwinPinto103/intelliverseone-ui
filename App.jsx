@@ -1,28 +1,21 @@
-import { useState } from 'react';
-import { Input } from './components/ui/Input';
-import { Button } from './components/ui/Button';
-import { Card, CardContent } from './components/ui/Card';
-import { Avatar } from './components/ui/Avatar';
-import { BellIcon, SettingsIcon } from 'lucide-react';
-import { saveConsulta } from './saveConsulta';
+import React, { useState } from "react";
+import { Input } from "./components/ui/Input";
+import { Button } from "./components/ui/Button";
+import { Card, CardContent } from "./components/ui/Card";
 
-export default function IntelliVerseOne() {
-  const [query, setQuery] = useState('');
+export default function App() {
+  const [query, setQuery] = useState("");
   const [showPromptMessage, setShowPromptMessage] = useState(false);
 
-  const handleAsk = async () => {
-    if (query.trim() !== '') {
+  const handleAsk = () => {
+    if (query.trim() !== "") {
       setShowPromptMessage(true);
-
-      // Guardar consulta en Supabase
-      await saveConsulta(query, 'Respuesta pendiente...');
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#00af2c] to-[#1a1f3c] text-white p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a0a2c] to-[#1a1f3c] text-white p-4">
       <div className="max-w-4xl mx-auto space-y-6">
-        {/* Barra de preguntas */}
         <div className="relative">
           <Input
             placeholder="Haz tu pregunta..."
