@@ -8,9 +8,8 @@ export default function App() {
   const [showPromptMessage, setShowPromptMessage] = useState(false);
 
   const handleAsk = () => {
-    if (query.trim() !== "") {
-      setShowPromptMessage(true);
-    }
+    setShowPromptMessage(true);
+    // Aquí puedes conectar con Supabase o cualquier IA después
   };
 
   return (
@@ -30,7 +29,9 @@ export default function App() {
         {showPromptMessage && (
           <Card>
             <CardContent>
-              <p className="text-sm">Tu pregunta ha sido enviada. La respuesta está en camino...</p>
+              <p className="text-sm">
+                Tu pregunta ha sido enviada. La respuesta está en camino...
+              </p>
             </CardContent>
           </Card>
         )}
