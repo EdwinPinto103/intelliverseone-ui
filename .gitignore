@@ -1,0 +1,11 @@
+# ⛔ Ignorar dependencias y build
+node_modules
+dist
+
+# ⚙️ Configuración del editor
+.vscode
+.DS_Store
+
+# ⚠️ Archivos sensibles o temporales
+.env
+*.log
