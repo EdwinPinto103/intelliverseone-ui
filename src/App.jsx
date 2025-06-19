@@ -1,9 +1,12 @@
-import React from "react";
 
-export default function App() {
+import React from 'react';
+
+function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a0a2c] to-[#1a1f3c] text-white p-6">
-      <h1 className="text-3xl font-bold">¡Bienvenido a IntelliVerseOne!</h1>
+    <div className="text-center text-white min-h-screen bg-gradient-to-br from-[#0b122b] to-black flex items-center justify-center">
+      <h1 className="text-4xl font-bold">¡Bienvenido a IntelliVerseOne!</h1>
     </div>
   );
 }
+
+export default App;
