@@ -1,0 +1,1 @@
+// JS simulado para frontend

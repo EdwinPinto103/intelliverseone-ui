@@ -1,15 +1,41 @@
 
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IntelliVerseOne</title>
-    <script type="module" crossorigin src="/assets/index-o3SRvskq.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cyjq0F2F.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IntelliVerseOne</title>
+  <script type="module" crossorigin src="/assets/index.js"></script>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <div id="root">
+    <div style='font-family: Arial; padding: 2rem'>
+      <h1>IntelliVerseOne</h1>
+      <button onclick="addProject()">Nuevo Proyecto</button>
+      <div id="projectList" style="margin-top: 2rem"></div>
+    </div>
+    <script>
+      function loadProjects() {
+        const projects = JSON.parse(localStorage.getItem("projects") || "[]");
+        const list = document.getElementById("projectList");
+        list.innerHTML = "";
+        projects.forEach((p, i) => {
+          const div = document.createElement("div");
+          div.style = "padding: 1rem; border: 1px solid #ccc; margin-bottom: 1rem";
+          div.textContent = p;
+          list.appendChild(div);
+        });
+      }
+      function addProject() {
+        const projects = JSON.parse(localStorage.getItem("projects") || "[]");
+        const newProject = "Proyecto #" + (projects.length + 1);
+        projects.push(newProject);
+        localStorage.setItem("projects", JSON.stringify(projects));
+        loadProjects();
+      }
+      window.onload = loadProjects;
+    </script>
+  </div>
+</body>
 </html>
